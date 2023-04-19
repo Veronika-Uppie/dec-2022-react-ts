@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// Зробити компонент, в якому буде форма, за допомоги якої можливо створити нового юзера постовим запитом на http://jsonplaceholder.typicode.com/users
+// Зробити компонент, в якому буде форма, за допомоги якої можливо створити новий комментар постовим запитом на http://jsonplaceholder.typicode.com/comments
+//
+//
+// http://owu.linkpc.net/carsAPI/v1/doc
+// Реалізувати створення, видалення та оновлення машин
 
-function App() {
+
+
+
+import Users from "./components/users/Users";
+import Cars from "./components/Cars/Cars";
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        {/*<Users/>*/}
+        {<Cars/>}
+      </div>
   );
 }
 
