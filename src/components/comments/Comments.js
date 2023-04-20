@@ -23,8 +23,8 @@ const Comments = () => {
 
     return (
         <div>
-            <h4>Comments Details</h4>
-            <Outlet/>
+            {/*<h4>Comments Details</h4>*/}
+            {/*<Outlet/>*/}
             {
                 comments.map(value => <Comment key={value.id} item={value}/>)
             }

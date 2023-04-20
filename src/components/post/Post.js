@@ -7,7 +7,7 @@ const Post = ({item}) => {
 
             <Link to={item.id.toString()} state={{...item}}>
 
-                <div>{item.title}</div>
+                <div>{item.id} {item.title}</div>
             </Link>
 
         </div>
