@@ -12,16 +12,13 @@
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import About from "./components/about/About";
 import Home from "./components/home/Home";
 import Comments from "./components/comments/Comments";
 import Albums from "./components/albums/Albums";
 import Todos from "./components/todos/Todos";
 import TodosDetails from "./components/todos-details/TodosDetails";
 import AlbumDetails from "./components/album-details/AlbumDetails";
-import CommentDetails from "./components/comment-details/CommentDetails";
 import Post from "./components/post/Post";
-import PostDetails from "./components/post-details/PostDetails";
 
 function App() {
   return (
@@ -34,9 +31,6 @@ function App() {
             </li>
             <li>
               <Link to={'/layout'}>layout</Link>
-            </li>
-            <li>
-              <Link to={'/about'}>about</Link>
             </li>
           </ul>
         </div>
@@ -62,7 +56,6 @@ function App() {
                       </Route>
                   </Route>
 
-                  <Route path={'/about'} element={<About/>}/>>
 
               </Routes>
           </div>

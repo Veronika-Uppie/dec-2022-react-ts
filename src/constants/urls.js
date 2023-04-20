@@ -3,6 +3,9 @@ const posts= '/posts'
 
 
 const urls ={
+    todos:'/todos',
+    albums:'/albums',
+    comments:'/comments',
     posts: {
         all:posts,
         getById:(id)=>`${posts}/${id}`
