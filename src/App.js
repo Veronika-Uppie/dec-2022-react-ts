@@ -1,5 +1,3 @@
-// еще сделай еще небольшую правку в lesson4:
-//
 //     реалізувати 3 маршрути
 // todos - при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
 //
@@ -10,6 +8,7 @@
 //     id поста взяти з коментаря (postId)
 //
 // відображати ті чи інші маршрути можна на будь-якому рівні на ваш вибір.
+
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
