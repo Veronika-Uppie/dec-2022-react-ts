@@ -19,6 +19,7 @@ const Layout = () => {
 
             <div>
                 <h3>sub view</h3>
+                <Outlet/>
 
             </div>
         </div>

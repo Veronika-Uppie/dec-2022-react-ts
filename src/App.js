@@ -17,6 +17,8 @@ import Home from "./components/home/Home";
 import Comments from "./components/comments/Comments";
 import Albums from "./components/albums/Albums";
 import Todos from "./components/todos/Todos";
+import TodosDetails from "./components/todos-details/TodosDetails";
+import AlbumDetails from "./components/album-details/AlbumDetails";
 
 function App() {
   return (
@@ -40,12 +42,21 @@ function App() {
               <h2>view</h2>
               <Routes>
                   <Route path={'/'} element={<Home/>}/>>
-                  <Route path={'/layout'} element={<Layout/>}>>
-                      <Route path={'todos'} element={<Todos/>}/>
-                      <Route path={'albums'} element={<Albums/>}/>
-                      <Route path={'comments'} element={<Comments/>}/>
 
+                  <Route path={'/layout'} element={<Layout/>}>>
+
+                      <Route path={'todos'} element={<Todos/>}>
+                          <Route path={':id'} element={<TodosDetails/>}/>
+                      </Route>
+
+                      <Route path={'albums'} element={<Albums/>}>
+                          <Route path={':id'} element={<AlbumDetails/>}/>
+                      </Route>
+
+
+                      <Route path={'comments'} element={<Comments/>}/>
                   </Route>
+
                   <Route path={'/about'} element={<About/>}/>>
 
               </Routes>

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Todo from "../todo/Todo";
+import {Outlet} from "react-router-dom";
 
 const Todos = () => {
     let [todos, setTodos] = useState([]);
@@ -18,9 +19,14 @@ const Todos = () => {
     }, []);
     return (
         <div>
+            <h4>todoDetails</h4>
+            <Outlet/>
+
             {
                 todos.map(value => <Todo key={value.id} item={value}/>)
             }
+
+
 
 
         </div>
