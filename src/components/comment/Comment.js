@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 
@@ -5,15 +6,14 @@ const Comment = ({item}) => {
     let navigate = useNavigate();
     return (
         <div>
-
-            {/*<Link to={item.id.toString()} state={{...item}}>*/}
-                <div>{item.postId}</div>
-                <div>{item.name}</div>
-
-            {/*</Link>*/}
+            <div>{item.id}</div>
+            <div>{item.postId}</div>
+            <div>{item.name}</div>
+            <div>{item.email}</div>
+            <div>{item.body}</div>
 
             <button onClick={()=> {
-                navigate(item.id.toString());
+                navigate(`${item.postId}`)
             }}>Related post</button>
 
         </div>
