@@ -4,13 +4,13 @@ import {Link, Outlet} from "react-router-dom";
 const Layout = () => {
     return (
         <div>
-            <h3>sub page menu</h3>
+            <h3>Sub page menu</h3>
             <ol>
                 <li>
-                    <Link to={'todo'}>todo page</Link>
+                    <Link to={'todos'}>todosPage</Link>
                 </li>
                 <li>
-                    <Link to={'posts'}>posts page</Link>
+                    <Link to={'albums'}>albumsPage</Link>
                 </li>
                 <li>
                     <Link to={'comments'}>comments page</Link>
@@ -19,7 +19,7 @@ const Layout = () => {
 
             <div>
                 <h3>sub view</h3>
-                <Outlet/>
+
             </div>
         </div>
     );

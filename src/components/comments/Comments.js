@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Todo = ({item}) => {
+const Comments = () => {
     return (
         <div>
-            {item}
+            comments page
         </div>
     );
 };
 
-export default Todo;
+export default Comments;

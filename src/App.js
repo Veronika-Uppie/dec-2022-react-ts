@@ -11,10 +11,12 @@
 
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
-import Todo from "./components/todo/Todo";
 import Layout from "./components/layout/Layout";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
+import Comments from "./components/comments/Comments";
+import Albums from "./components/albums/Albums";
+import Todos from "./components/todos/Todos";
 
 function App() {
   return (
@@ -34,18 +36,22 @@ function App() {
           </ul>
         </div>
 
-        <div>
-          <h2>view</h2>
-          <Routes>
+          <div>
+              <h2>view</h2>
+              <Routes>
+                  <Route path={'/'} element={<Home/>}/>>
+                  <Route path={'/layout'} element={<Layout/>}>>
+                      <Route path={'todos'} element={<Todos/>}/>
+                      <Route path={'albums'} element={<Albums/>}/>
+                      <Route path={'comments'} element={<Comments/>}/>
 
-            <Route path={'/'} element={<Home/>}/>>
-            <Route path={'/layout'} element={<Layout/>}>>
-              <Route path={'todo'} element={<Todo/>}/>
-                </Route>
-            <Route path={'/about'} element={<About/>}/>>
+                  </Route>
+                  <Route path={'/about'} element={<About/>}/>>
 
-          </Routes>
-        </div>
+              </Routes>
+          </div>
+
+
 
       </div>
   );

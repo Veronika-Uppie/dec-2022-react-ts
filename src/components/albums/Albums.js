@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Todo = ({item}) => {
+const Albums = () => {
     return (
         <div>
-            {item}
+            albums page
         </div>
     );
 };
 
-export default Todo;
+export default Albums;
