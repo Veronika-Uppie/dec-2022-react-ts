@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
 import Album from "../album/Album";
+import {albumService} from "../../services/album.service";
 
 const Albums = () => {
     let [albums, setAlbums] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/albums')
-            .then(value => value.json())
+        albumService.getAll()
+            .then(value => value.data)
             .then(value => {
                 setAlbums([...value]);
             });

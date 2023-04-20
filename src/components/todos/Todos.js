@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import Todo from "../todo/Todo";
 import {Outlet} from "react-router-dom";
+import {todoService} from "../../services/todo.service";
 
 const Todos = () => {
     let [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos')
-            .then(value => value.json())
+        todoService.getAll()
+            .then(value => value.data)
             .then(value => {
                 setTodos([...value]);
             });
