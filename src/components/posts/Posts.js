@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
-import Comment from "../comment/Comment";
+import Post from "../post/Post";
 
-const Comments = () => {
-    let [comments, setComments] = useState([]);
+const Posts = () => {
+    let [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/comments')
+        fetch('https://jsonplaceholder.typicode.com/posts')
             .then(value => value.json())
             .then(value => {
-                setComments([...value]);
+                setPosts([...value]);
             });
 
         return () => {
@@ -23,10 +23,10 @@ const Comments = () => {
 
     return (
         <div>
-            <h4>Comments Details</h4>
+            <h4>Related post</h4>
             <Outlet/>
             {
-                comments.map(value => <Comment key={value.id} item={value}/>)
+                posts.map(value => <Post key={value.id} item={value}/>)
             }
 
         </div>
@@ -36,4 +36,4 @@ const Comments = () => {
     );
 };
 
-export default Comments;
+export default Posts;
