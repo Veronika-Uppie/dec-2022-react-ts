@@ -15,8 +15,8 @@ const App = () => {
 
   return (
       <div>
-        {/*<Users/>*/}
-        {<Cars/>}
+        <Users/>
+        {/*{<Cars/>}*/}
       </div>
   );
 }

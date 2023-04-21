@@ -13,7 +13,7 @@ const Users = () => {
     return (
         <div>
             <UserForm/>
-            {/*{users.map(user=> <User key={user.id} user={user}/>)}*/}
+            {users.map(user=> <User key={user.id} user={user}/>)}
         </div>
     );
 };
