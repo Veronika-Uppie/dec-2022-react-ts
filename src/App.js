@@ -10,21 +10,27 @@
 
 import React, {useReducer, useState} from 'react';
 import './App.css';
+
+import './App.css';
 import Cats from "./components/cats/Cats";
+import AnimalsInfo from "./components/animalsInfo/AnimalsInfo";
 import Dogs from "./components/dogs/Dogs";
 import {Posts} from "./components/posts/Posts";
 import {Comments} from "./components/comments/Comments";
 
-const reducer = (state, action) => {
+
+
+function reducer(state, action) {
     switch (action.type) {
         case 'addCat':
-            return {...state, cats: [...state.cats, action.payload]};
+            return { ...state, cats: [...state.cats, action.payload] };
         case 'addDog':
-            return {...state, dogs: [...state.dogs, action.payload]};
-        case 'deleteCat':
-            return { ...state, cats: state.cats.filter(cat => cat !== action.payload) };
-        case 'deleteDog':
-            return { ...state, dogs: state.dogs.filter(dog => dog !== action.payload) };
+            return { ...state, dogs: [...state.dogs, action.payload] };
+        case 'Delete':
+            return { ...state,
+                cats: state.cats.filter(cat => cat.id !== action.payload),
+                dogs: state.dogs.filter(dog => dog.id !== action.payload)
+            };
         default:
             return state;
     }
@@ -34,11 +40,10 @@ function App() {
     const [hidePosts, setHidePosts] = useState(true);
     const [hideComments, setHideComments] = useState(true);
 
-    const [state, dispatch] = useReducer(reducer, {cats: [], dogs: []});
+    const [state, dispatch] = useReducer(reducer, { cats: [], dogs: [] });
 
     return (
         <div>
-
             <div>
                 <button onClick={()=> setHidePosts(prevState => !prevState)}>Posts</button>
                 {hidePosts&&<Posts/>}
@@ -48,43 +53,22 @@ function App() {
                 {hideComments&&<Comments/>}
             </div>
 
-
-
             <div className="app-container">
                 <Cats dispatch={dispatch} />
                 <Dogs dispatch={dispatch} />
             </div>
 
             <div className="list-container">
-                <div className="animals_info">
-                    <h2>Cats:</h2>
-                    <ul>
-                        {state.cats.map((cat, index) => (
-                            <li key={cat}>
-                                {cat}
-                                <button onClick={()=> dispatch({ type: 'deleteCat', payload: cat})}>Delete</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="animals_info">
-                    <h2>Dogs:</h2>
-                    <ul>
-                        {state.dogs.map((dog, index) => (
-                            <li key={index}>
-                                {dog}
-                                <button onClick={()=> dispatch({ type: 'deleteDog', payload: dog})}>Delete</button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <AnimalsInfo pets={state.cats} dispatch={dispatch} />
 
+                <AnimalsInfo pets={state.dogs} dispatch={dispatch} />
             </div>
-
-
-
         </div>
-
     );
 }
+
 export default App;
+
+
+
+
