@@ -7,7 +7,7 @@ function Dogs({ dispatch }) {
         setDogName(e.target.value);
     };
 
-    const handleSaveDog = () => {
+    const saveDog = () => {
         dispatch({ type: 'addDog', payload: dogName });
         setDogName('');
     };
@@ -16,7 +16,7 @@ function Dogs({ dispatch }) {
         <div>
             Add Dog:
             <input type="text" value={dogName} onChange={handleDogNameChange} />
-            <button onClick={handleSaveDog}>Save</button>
+            <button onClick={saveDog}>Save</button>
         </div>
     );
 }

@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 
 
@@ -8,16 +9,16 @@ function Cats({ dispatch }) {
         setCatName(e.target.value);
     };
 
-    const handleSaveCat = () => {
+    const saveCat = () => {
         dispatch({ type: 'addCat', payload: catName });
         setCatName('');
     };
 
     return (
         <div>
-            Add Cat:
+             Add Cat:
             <input type="text" value={catName} onChange={handleCatNameChange} />
-            <button onClick={handleSaveCat}>Save</button>
+            <button onClick={saveCat}>Save</button>
 
         </div>
 
